@@ -4,535 +4,619 @@
     <title>Vedic Dhaam - Your Complete Astrology Guide</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
+    <!-- Vendor CSS -->
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/ionicons.min.css">
-    
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS fixes and WhatsApp UI polish -->
+    <style>
+      :root{
+        --brand:#fd5f00;
+        --brand-dark:#d94f00;
+        --dark:#0f0f0f;
+        --wa:#25D366;
+        --ink:#111;
+      }
+      /* Fix missing bg-darken class */
+      .bg-darken{background:#171717;color:#fff;}
+      .bg-darken .heading, .bg-darken h3, .bg-darken p{color:#fff;}
+
+      /* Brand buttons */
+      .btn-primary{
+        background-color:var(--brand);
+        border-color:var(--brand);
+      }
+      .btn-primary:hover, .btn-primary:focus{
+        background-color:var(--brand-dark);
+        border-color:var(--brand-dark);
+        box-shadow:0 6px 18px rgba(253,95,0,0.25);
+      }
+
+      /* Hero overlay stronger for readability */
+      .home-slider .slider-item .overlay{
+        background:linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.35));
+      }
+
+      /* Appointment form styling */
+      .appointment-form .form-group{ margin-bottom:16px; }
+      .appointment-form .form-control, .appointment-form select{
+        border-radius:8px;
+        border:1px solid rgba(255,255,255,0.2);
+        background:rgba(0,0,0,0.25);
+        color:#fff;
+      }
+      .appointment-form .form-control::placeholder{ color:rgba(255,255,255,0.85); }
+      .select-wrap .icon{ color:#fff; }
+
+      /* Footer subscribe inputs */
+      .subscribe-form .form-control{ border-radius:8px; }
+
+      /* WhatsApp notice toast */
+      #vd-whatsapp-toast{
+        position:fixed;
+        bottom:20px;
+        left:50%;
+        transform:translateX(-50%);
+        background:linear-gradient(135deg, #1b1b1b, #262626);
+        color:#fff;
+        padding:12px 16px;
+        border-radius:12px;
+        box-shadow:0 8px 24px rgba(0,0,0,.35);
+        z-index:9999;
+        font-family:Poppins, sans-serif;
+        font-size:14px;
+        max-width:92%;
+        text-align:center;
+        opacity:0;
+        transition:opacity .25s ease;
+        display:flex;
+        align-items:center;
+        gap:10px;
+        pointer-events:none;
+      }
+      #vd-whatsapp-toast.show{ opacity:1; }
+      #vd-whatsapp-toast .dot{
+        width:10px;height:10px;border-radius:50%;
+        background:var(--wa);
+        box-shadow:0 0 0 3px rgba(37,211,102,.2);
+        flex:0 0 auto;
+      }
+      #vd-whatsapp-toast .txt{ line-height:1.4; }
+
+      /* Loader SVG fix */
+      #ftco-loader .circular{ animation:none; }
+
+      /* Minor typography consistency */
+      .heading-section h2 span{ color:var(--brand); }
+    </style>
   </head>
   <body>
-	  <div class="bg-top navbar-light">
-    	<div class="container">
-    		<div class="row no-gutters d-flex align-items-center align-items-stretch">
-    			<div class="col-md-4 d-flex align-items-center py-4">
-    				<a class="navbar-brand" href="index.html">Vedic Dhaam</a>
-    			</div>
-	    		<div class="col-lg-8 d-block">
-		    		<div class="row d-flex">
-			    		<div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-			    			<div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-			    			<div class="text">
-			    				<span>Email</span>
-					    		<span>consult@celestialinsights.com</span>
-					    	</div>
-			    		</div>
-			    		<div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
-			    			<div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-					    	<div class="text">
-					    		<span>Call</span>
-					    		<span>Call Us: +91 9876 543 210</span>
-					    	</div>
-			    		</div>
-			    		<div class="col-md topper d-flex align-items-center justify-content-end">
-			    			<p class="mb-0">
-			    				<a href="#" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
-			    					<span>Book Consultation</span>
-			    				</a>
-			    			</p>
-			    		</div>
-			    	</div>
-			    </div>
-		    </div>
-		  </div>
-    </div>
-	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container d-flex align-items-center px-4">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
-	      <form action="#" class="searchform order-lg-last">
-          <div class="form-group d-flex">
-            <input type="text" class="form-control pl-3" placeholder="Search">
-            <button type="submit" placeholder="" class="form-control search"><span class="ion-ios-search"></span></button>
+    <div class="bg-top navbar-light">
+      <div class="container">
+        <div class="row no-gutters d-flex align-items-center align-items-stretch">
+          <div class="col-md-4 d-flex align-items-center py-4">
+            <a class="navbar-brand" href="index.html">Vedic Dhaam</a>
           </div>
-        </form>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active"><a href="index.html" class="nav-link pl-0">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	        	<li class="nav-item"><a href="astrologers.html" class="nav-link">Astrologers</a></li>
-	        	<li class="nav-item"><a href="blog.html" class="nav-link">Horoscope</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    
-    <section class="home-slider owl-carousel">
-    <div class="slider-item" style="position:relative;height:100vh;overflow:hidden;">
-  
-  <!-- Background Video -->
-  <video autoplay loop muted playsinline 
-    style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
-    <source src="images/abc.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <!-- Overlay -->
-  <div class="overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:1;"></div>
-
-  <!-- Content -->
-  <div class="container" style="position:relative;z-index:2;">
-    <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-      <div class="col-md-6 ftco-animate" style="color:#fff;">
-        <h1 class="mb-4" style="font-size:48px;font-weight:700;">Discover Your Cosmic Path with Vedic Astrology</h1>
-        <p style="font-size:18px;line-height:1.6;">Unlock the secrets of the stars and planets. Navigate life's journey with ancient wisdom and personalized astrological guidance.</p>
-        <p><a href="#" class="btn btn-primary px-4 py-3 mt-3" 
-              style="background-color:#fd5f00;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:20px;">Get Your Kundali</a></p>
+          <div class="col-lg-8 d-block">
+            <div class="row d-flex">
+              <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+                <div class="icon d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+                <div class="text">
+                  <span>Email</span>
+                  <span>consult@celestialinsights.com</span>
+                </div>
+              </div>
+              <div class="col-md d-flex topper align-items-center align-items-stretch py-md-4">
+                <div class="icon d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+                <div class="text">
+                  <span>Call</span>
+                  <span>Call Us: +91 9992249421</span>
+                </div>
+              </div>
+              <div class="col-md topper d-flex align-items-center justify-content-end">
+                <p class="mb-0">
+                  <a href="#" id="btnBookConsultationTop" class="btn py-2 px-3 btn-primary d-flex align-items-center justify-content-center">
+                    <span>Book Consultation</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
 
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container d-flex align-items-center px-4">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <form action="#" class="searchform order-lg-last">
+          <div class="form-group d-flex">
+            <input type="text" class="form-control pl-3" placeholder="Search">
+            <button type="submit" class="form-control search"><span class="ion-ios-search"></span></button>
+          </div>
+        </form>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a href="index.html" class="nav-link pl-0">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="astrologers.html" class="nav-link">Astrologers</a></li>
+            <li class="nav-item"><a href="blog.html" class="nav-link">Horoscope</a></li>
+            <li class="nav-item"><a href="contact.html" id="navContactLink" class="nav-link">Contact</a></li>
+          </ul>
+        </div>
+	    </div>
+	  </nav>
 
-      <!-- <div class="slider-item" style="background-image:url(images/bg_2.jpg);">
-      	<div class="overlay"></div>
-        <div class="container">
+    <section class="home-slider owl-carousel">
+      <div class="slider-item" style="position:relative;height:100vh;overflow:hidden;">
+        <!-- Background Video -->
+        <video autoplay loop muted playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;">
+          <source src="images/abc.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <!-- Overlay -->
+        <div class="overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;"></div>
+
+        <!-- Content -->
+        <div class="container" style="position:relative;z-index:2;">
           <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
-          <div class="col-md-6 ftco-animate">
-            <h1 class="mb-4">Expert Astrologers at Your Service</h1>
-            <p>Connect with certified Vedic astrologers for personalized horoscope readings, birth chart analysis, and life predictions.</p>
-            <p><a href="#" class="btn btn-primary px-4 py-3 mt-3">Consult Now</a></p>
+            <div class="col-md-6 ftco-animate" style="color:#fff;">
+              <h1 class="mb-4" style="font-size:48px;font-weight:700;">Discover Your Cosmic Path with Vedic Astrology</h1>
+              <p style="font-size:18px;line-height:1.6;">Unlock the secrets of the stars and planets. Navigate life's journey with ancient wisdom and personalized astrological guidance.</p>
+              <p><a href="#" id="btnGetKundali" class="btn btn-primary px-4 py-3 mt-3" style="padding:12px 24px;border-radius:6px;">Get Your Kundali</a></p>
+            </div>
           </div>
         </div>
-        </div>
-      </div> -->
+      </div>
     </section>
 
     <section class="ftco-services ftco-no-pb">
-		<div class="container-wrap">
-			<div class="row no-gutters">
+      <div class="container-wrap">
+        <div class="row no-gutters">
           <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
             <div class="media block-6 d-block text-center">
               <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-diploma"></span>
+                <span class="flaticon-diploma"></span>
               </div>
               <div class="media-body p-2 mt-3">
                 <h3 class="heading">Certified Astrologers</h3>
                 <p>Our expert astrologers are trained in Vedic astrology with years of experience in providing accurate predictions and guidance.</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
             <div class="media block-6 d-block text-center">
               <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-reading"></span>
+                <span class="flaticon-reading"></span>
               </div>
               <div class="media-body p-2 mt-3">
                 <h3 class="heading">Personalized Readings</h3>
                 <p>Get customized horoscope readings and birth chart analysis tailored to your unique planetary positions and life circumstances.</p>
               </div>
-            </div>    
+            </div>
           </div>
           <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-primary">
             <div class="media block-6 d-block text-center">
               <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-books"></span>
+                <span class="flaticon-books"></span>
               </div>
               <div class="media-body p-2 mt-3">
                 <h3 class="heading">Ancient Wisdom</h3>
                 <p>Access profound knowledge from Vedic scriptures, combining traditional astrological practices with modern interpretation methods.</p>
               </div>
-            </div>      
+            </div>
           </div>
           <div class="col-md-3 d-flex services align-self-stretch py-5 px-4 ftco-animate bg-darken">
             <div class="media block-6 d-block text-center">
               <div class="icon d-flex justify-content-center align-items-center">
-            		<span class="flaticon-teacher"></span>
+                <span class="flaticon-teacher"></span>
               </div>
               <div class="media-body p-2 mt-3">
                 <h3 class="heading">24/7 Support</h3>
                 <p>Connect with our astrologers anytime through video calls, chat consultations, and detailed written reports for your convenience.</p>
               </div>
-            </div>      
+            </div>
           </div>
         </div>
-		</div>
-	</section>
-		
-	<section class="ftco-section ftco-no-pt ftc-no-pb">
-		<div class="container">
-			<div class="row d-flex">
-				<div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
-					<div class="img" style="background-image: url(images/about.jpg); border"></div>
-				</div>
-				<div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
-          	<h2 class="mb-4">Our Astrological Services</h2>
-				<p>At Celestial Insights, we bridge ancient Vedic wisdom with modern interpretations to help you navigate life's challenges. Our comprehensive astrology services provide clarity on relationships, career, health, and spiritual growth through detailed planetary analysis.</p>
-				<div class="row mt-5">
-					<div class="col-lg-6">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-security"></span></div>
-							<div class="text pl-3">
-								<h3>Birth Chart Analysis</h3>
-								<p>Detailed Kundali reading revealing your planetary positions, doshas, and life path predictions.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
-							<div class="text pl-3">
-								<h3>Daily Horoscope</h3>
-								<p>Get personalized daily, weekly, and monthly horoscope predictions for all 12 zodiac signs.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
-							<div class="text pl-3">
-								<h3>Match Making</h3>
-								<p>Comprehensive compatibility analysis for marriage based on Kundali matching and Guna Milan.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-education"></span></div>
-							<div class="text pl-3">
-								<h3>Career Guidance</h3>
-								<p>Professional astrological guidance for career choices, business ventures, and financial planning.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
-							<div class="text pl-3">
-								<h3>Gemstone Consultation</h3>
-								<p>Expert recommendations on powerful gemstones to strengthen beneficial planets in your chart.</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="services-2 d-flex">
-							<div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-kids"></span></div>
-							<div class="text pl-3">
-								<h3>Vastu Shastra</h3>
-								<p>Harmonize your living and working spaces with traditional Vastu principles for prosperity.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
-	</section>
+      </div>
+	  </section>
 
-	<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-2 d-flex">
-    			<div class="col-md-6 align-items-stretch d-flex">
-    				<div class="img img-video d-flex align-items-center" style="background-image: url(images/about-2.jpg);">
-    					<div class="video justify-content-center">
-							<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
-								<span class="ion-ios-play"></span>
-		  					</a>
-						</div>
-    				</div>
-    			</div>
-          <div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5">
-            <h2 class="mb-4">Celestial Insights Astrology</h2>
-            <p>For over two decades, we have been guiding thousands of individuals through life's complexities using the profound science of Vedic astrology. Our mission is to illuminate your path by decoding the cosmic patterns that influence your destiny.</p>
-            <p>With a team of highly qualified astrologers specializing in various branches including Vedic astrology, Numerology, Tarot, and Vastu Shastra, we provide comprehensive solutions for all aspects of life - from relationships and career to health and spiritual growth.</p>
+    <section class="ftco-section ftco-no-pt ftc-no-pb">
+      <div class="container">
+        <div class="row d-flex">
+          <div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
+            <div class="img" style="background-image: url(images/about.jpg); border"></div>
           </div>
-        </div>	
-    		<div class="row d-md-flex align-items-center justify-content-center">
-    			<div class="col-lg-12">
-    				<div class="row d-md-flex align-items-center">
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		            	<div class="icon"><span class="flaticon-doctor"></span></div>
-		              <div class="text">
-		                <strong class="number" data-number="50">0</strong>
-		                <span>Expert Astrologers</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		            	<div class="icon"><span class="flaticon-doctor"></span></div>
-		              <div class="text">
-		                <strong class="number" data-number="15000">0</strong>
-		                <span>Happy Clients</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		            	<div class="icon"><span class="flaticon-doctor"></span></div>
-		              <div class="text">
-		                <strong class="number" data-number="12">0</strong>
-		                <span>Zodiac Signs</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18">
-		            	<div class="icon"><span class="flaticon-doctor"></span></div>
-		              <div class="text">
-		                <strong class="number" data-number="20">0</strong>
-		                <span>Years Experience</span>
-		              </div>
-		            </div>
-		          </div>
-	          </div>
+          <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
+            <h2 class="mb-4">Our Astrological Services</h2>
+            <p>At Vedic Dhaam, we bridge ancient Vedic wisdom with modern interpretations to help you navigate life's challenges, offering clarity on relationships, career, health, and spiritual growth through detailed planetary analysis.</p>
+            <div class="row mt-5">
+              <div class="col-lg-6">
+                <div class="services-2 d-flex">
+                  <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-security"></span></div>
+                  <div class="text pl-3">
+                    <h3>Birth Chart Analysis</h3>
+                    <p>Detailed Kundali reading revealing your planetary positions, doshas, and life path predictions.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="services-2 d-flex">
+                  <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-reading"></span></div>
+                  <div class="text pl-3">
+                    <h3>Daily Horoscope</h3>
+                    <p>Get personalized daily, weekly, and monthly horoscope predictions for all 12 zodiac signs.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="services-2 d-flex">
+                  <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-diploma"></span></div>
+                  <div class="text pl-3">
+                    <h3>Match Making</h3>
+                    <p>Comprehensive compatibility analysis for marriage based on Kundali matching and Guna Milan.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="services-2 d-flex">
+                  <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-education"></span></div>
+                  <div class="text pl-3">
+                    <h3>Career Guidance</h3>
+                    <p>Professional astrological guidance for career choices, business ventures, and financial planning.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="services-2 d-flex">
+                  <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-jigsaw"></span></div>
+                  <div class="text pl-3">
+                    <h3>Gemstone Consultation</h3>
+                    <p>Expert recommendations on powerful gemstones to strengthen beneficial planets in your chart.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="services-2 d-flex">
+                  <div class="icon mt-2 d-flex justify-content-center align-items-center"><span class="flaticon-kids"></span></div>
+                  <div class="text pl-3">
+                    <h3>Vastu Shastra</h3>
+                    <p>Harmonize your living and working spaces with traditional Vastu principles for prosperity.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_3.jpg);" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-2 d-flex">
+          <div class="col-md-6 align-items-stretch d-flex">
+            <div class="img img-video d-flex align-items-center" style="background-image: url(images/about-2.jpg);">
+              <div class="video justify-content-center">
+                <a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+                  <span class="ion-ios-play"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0 pt-5">
+            <h2 class="mb-4">Vedic Dhaam Astrology</h2>
+            <p>For over two decades, Vedic Dhaam has guided thousands using Vedic astrology's profound insights, illuminating paths by decoding cosmic patterns influencing destiny.</p>
+            <p>With specialists across Vedic astrology, Numerology, Tarot, and Vastu, Vedic Dhaam provides holistic solutions spanning relationships, career, health, and spiritual growth.</p>
           </div>
         </div>
-    	</div>
+        <div class="row d-md-flex align-items-center justify-content-center">
+          <div class="col-lg-12">
+            <div class="row d-md-flex align-items-center">
+              <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18">
+                  <div class="icon"><span class="flaticon-doctor"></span></div>
+                  <div class="text">
+                    <strong class="number" data-number="50">0</strong>
+                    <span>Expert Astrologers</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18">
+                  <div class="icon"><span class="flaticon-doctor"></span></div>
+                  <div class="text">
+                    <strong class="number" data-number="15000">0</strong>
+                    <span>Happy Clients</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18">
+                  <div class="icon"><span class="flaticon-doctor"></span></div>
+                  <div class="text">
+                    <strong class="number" data-number="12">0</strong>
+                    <span>Zodiac Signs</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+                <div class="block-18">
+                  <div class="icon"><span class="flaticon-doctor"></span></div>
+                  <div class="text">
+                    <strong class="number" data-number="20">0</strong>
+                    <span>Years Experience</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
     </section>
 
     <section class="ftco-section">
-		<div class="container-fluid px-4">
-			<div class="row justify-content-center mb-5 pb-2">
+      <div class="container-fluid px-4">
+        <div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-8 text-center heading-section ftco-animate">
             <h2 class="mb-4"><span>Explore The</span> Zodiac Signs</h2>
-            <p>Discover the unique characteristics, strengths, and planetary influences of each zodiac sign. Learn how celestial bodies shape personality traits and life patterns.</p>
+            <p>Discover the unique characteristics, strengths, and planetary influences of each zodiac sign, and how celestial bodies shape personality and life patterns.</p>
           </div>
-        </div>	
-			<div class="row">
-				<div class="col-md-3 course ftco-animate">
-					<div class="img" style="background-image: url(images/course-1.jpg);"></div>
-					<div class="text pt-4">
-						<p class="meta d-flex">
-							<span><i class="icon-user mr-2"></i>Fire Sign</span>
-							<span><i class="icon-table mr-2"></i>Cardinal</span>
-							<span><i class="icon-calendar mr-2"></i>Mar 21-Apr 19</span>
-						</p>
-						<h3><a href="#">Aries - The Ram</a></h3>
-						<p>Bold, ambitious, and energetic. Ruled by Mars, Aries natives are natural leaders with pioneering spirit and unwavering determination.</p>
-						<p><a href="#" class="btn btn-primary">Read More</a></p>
-					</div>
-				</div>
-				<div class="col-md-3 course ftco-animate">
-					<div class="img" style="background-image: url(images/course-2.jpg);"></div>
-					<div class="text pt-4">
-						<p class="meta d-flex">
-							<span><i class="icon-user mr-2"></i>Earth Sign</span>
-							<span><i class="icon-table mr-2"></i>Fixed</span>
-							<span><i class="icon-calendar mr-2"></i>Apr 20-May 20</span>
-						</p>
-						<h3><a href="#">Taurus - The Bull</a></h3>
-						<p>Reliable, patient, and practical. Ruled by Venus, Taurus brings stability, sensuality, and appreciation for life's pleasures.</p>
-						<p><a href="#" class="btn btn-primary">Read More</a></p>
-					</div>
-				</div>
-				<div class="col-md-3 course ftco-animate">
-					<div class="img" style="background-image: url(images/course-3.jpg);"></div>
-					<div class="text pt-4">
-						<p class="meta d-flex">
-							<span><i class="icon-user mr-2"></i>Air Sign</span>
-							<span><i class="icon-table mr-2"></i>Mutable</span>
-							<span><i class="icon-calendar mr-2"></i>May 21-Jun 20</span>
-						</p>
-						<h3><a href="#">Gemini - The Twins</a></h3>
-						<p>Versatile, curious, and communicative. Ruled by Mercury, Gemini thrives on intellectual stimulation and social connections.</p>
-						<p><a href="#" class="btn btn-primary">Read More</a></p>
-					</div>
-				</div>
-				<div class="col-md-3 course ftco-animate">
-					<div class="img" style="background-image: url(images/course-4.jpg);"></div>
-					<div class="text pt-4">
-						<p class="meta d-flex">
-							<span><i class="icon-user mr-2"></i>Water Sign</span>
-							<span><i class="icon-table mr-2"></i>Cardinal</span>
-							<span><i class="icon-calendar mr-2"></i>Jun 21-Jul 22</span>
-						</p>
-						<h3><a href="#">Cancer - The Crab</a></h3>
-						<p>Intuitive, emotional, and nurturing. Ruled by the Moon, Cancer individuals are deeply connected to family and home.</p>
-						<p><a href="#" class="btn btn-primary">Read More</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        </div>
+        <div class="row">
+          <div class="col-md-3 course ftco-animate">
+            <div class="img" style="background-image: url(images/course-1.jpg);"></div>
+            <div class="text pt-4">
+              <p class="meta d-flex">
+                <span><i class="icon-user mr-2"></i>Fire Sign</span>
+                <span><i class="icon-table mr-2"></i>Cardinal</span>
+                <span><i class="icon-calendar mr-2"></i>Mar 21-Apr 19</span>
+              </p>
+              <h3><a href="#">Aries - The Ram</a></h3>
+              <p>Bold, ambitious, and energetic; ruled by Mars, Aries leads with pioneering spirit and determination.</p>
+              <p><a href="#" class="btn btn-primary">Read More</a></p>
+            </div>
+          </div>
+          <div class="col-md-3 course ftco-animate">
+            <div class="img" style="background-image: url(images/course-2.jpg);"></div>
+            <div class="text pt-4">
+              <p class="meta d-flex">
+                <span><i class="icon-user mr-2"></i>Earth Sign</span>
+                <span><i class="icon-table mr-2"></i>Fixed</span>
+                <span><i class="icon-calendar mr-2"></i>Apr 20-May 20</span>
+              </p>
+              <h3><a href="#">Taurus - The Bull</a></h3>
+              <p>Reliable and practical; ruled by Venus, Taurus brings stability, sensuality, and appreciation of life's pleasures.</p>
+              <p><a href="#" class="btn btn-primary">Read More</a></p>
+            </div>
+          </div>
+          <div class="col-md-3 course ftco-animate">
+            <div class="img" style="background-image: url(images/course-3.jpg);"></div>
+            <div class="text pt-4">
+              <p class="meta d-flex">
+                <span><i class="icon-user mr-2"></i>Air Sign</span>
+                <span><i class="icon-table mr-2"></i>Mutable</span>
+                <span><i class="icon-calendar mr-2"></i>May 21-Jun 20</span>
+              </p>
+              <h3><a href="#">Gemini - The Twins</a></h3>
+              <p>Versatile and communicative; ruled by Mercury, Gemini thrives on ideas, learning, and social connection.</p>
+              <p><a href="#" class="btn btn-primary">Read More</a></p>
+            </div>
+          </div>
+          <div class="col-md-3 course ftco-animate">
+            <div class="img" style="background-image: url(images/course-4.jpg);"></div>
+            <div class="text pt-4">
+              <p class="meta d-flex">
+                <span><i class="icon-user mr-2"></i>Water Sign</span>
+                <span><i class="icon-table mr-2"></i>Cardinal</span>
+                <span><i class="icon-calendar mr-2"></i>Jun 21-Jul 22</span>
+              </p>
+              <h3><a href="#">Cancer - The Crab</a></h3>
+              <p>Intuitive and nurturing; ruled by the Moon, Cancer is deeply connected to family, home, and emotions.</p>
+              <p><a href="#" class="btn btn-primary">Read More</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+	  </section>
 
-	<section class="ftco-section bg-light">
-		<div class="container-fluid px-4">
-			<div class="row justify-content-center mb-5 pb-2">
+    <section class="ftco-section bg-light">
+      <div class="container-fluid px-4">
+        <div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-8 text-center heading-section ftco-animate">
             <h2 class="mb-4">Our Expert Astrologers</h2>
-            <p>Meet our team of certified Vedic astrologers with decades of combined experience in providing accurate predictions and spiritual guidance.</p>
+            <p>Meet our team of certified Vedic astrologers with decades of combined experience in accurate predictions and spiritual guidance.</p>
           </div>
-        </div>	
-			<div class="row">
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="staff">
-						<div class="img-wrap d-flex align-items-stretch">
-							<div class="img align-self-stretch" style="background-image: url(images/teacher-1.jpg);"></div>
-						</div>
-						<div class="text pt-3 text-center">
-							<h3>Pandit Rajesh Sharma</h3>
-							<span class="position mb-2">Vedic Astrologer</span>
-							<div class="faded">
-								<p>25+ years experience in Kundali analysis, planetary remedies, and marriage compatibility.</p>
-								<ul class="ftco-social text-center">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-              </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="staff">
-						<div class="img-wrap d-flex align-items-stretch">
-							<div class="img align-self-stretch" style="background-image: url(images/teacher-2.jpg);"></div>
-						</div>
-						<div class="text pt-3 text-center">
-							<h3>Dr. Priya Mehta</h3>
-							<span class="position mb-2">Numerologist</span>
-							<div class="faded">
-								<p>Expert in numerology, name analysis, and lucky number calculations for personal and business success.</p>
-								<ul class="ftco-social text-center">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-              </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="staff">
-						<div class="img-wrap d-flex align-items-stretch">
-							<div class="img align-self-stretch" style="background-image: url(images/teacher-3.jpg);"></div>
-						</div>
-						<div class="text pt-3 text-center">
-							<h3>Swami Anand Kumar</h3>
-							<span class="position mb-2">Tarot Reader</span>
-							<div class="faded">
-								<p>Intuitive tarot card reader specializing in relationship guidance and spiritual counseling.</p>
-								<ul class="ftco-social text-center">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-              </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 ftco-animate">
-					<div class="staff">
-						<div class="img-wrap d-flex align-items-stretch">
-							<div class="img align-self-stretch" style="background-image: url(images/teacher-4.jpg);"></div>
-						</div>
-						<div class="text pt-3 text-center">
-							<h3>Acharya Vikram Singh</h3>
-							<span class="position mb-2">Vastu Expert</span>
-							<div class="faded">
-								<p>Certified Vastu Shastra consultant for residential and commercial space harmonization.</p>
-								<ul class="ftco-social text-center">
-	                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
-	                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-	              </ul>
-              </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/bg_5.jpg);" data-stellar-background-ratio="0.5">
-    	<div class="overlay"></div>
-    	<div class="container">
-    		<div class="row justify-content-end">
-    			<div class="col-md-6 py-5 px-md-5">
-    				<div class="py-md-5">
-		          <div class="heading-section heading-section-white ftco-animate mb-5">
-		            <h2 class="mb-4">Book Your Astrology Consultation</h2>
-		            <p>Connect with our expert astrologers for personalized guidance. Fill out the form below and we'll get back to you within 24 hours.</p>
-		          </div>
-		          <form action="#" class="appointment-form ftco-animate">
-		    				<div class="d-md-flex">
-			    				<div class="form-group">
-			    					<input type="text" class="form-control" placeholder="First Name">
-			    				</div>
-			    				<div class="form-group ml-md-4">
-			    					<input type="text" class="form-control" placeholder="Last Name">
-			    				</div>
-		    				</div>
-		    				<div class="d-md-flex">
-		    					<div class="form-group">
-			    					<div class="form-field">
-		        					<div class="select-wrap">
-		                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-		                    <select name="" id="" class="form-control">
-		                    	<option value="">Select Service</option>
-		                      <option value="">Birth Chart Reading</option>
-		                      <option value="">Marriage Matching</option>
-		                      <option value="">Career Consultation</option>
-		                      <option value="">Gemstone Recommendation</option>
-		                      <option value="">Vastu Consultation</option>
-		                      <option value="">Numerology Reading</option>
-		                    </select>
-		                  </div>
-			              </div>
-			    				</div>
-		    					<div class="form-group ml-md-4">
-			    					<input type="text" class="form-control" placeholder="Phone Number">
-			    				</div>
-		    				</div>
-		    				<div class="d-md-flex">
-		    					<div class="form-group">
-			              <textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Birth Date, Time & Place"></textarea>
-			            </div>
-			            <div class="form-group ml-md-4">
-			              <input type="submit" value="Book Consultation" class="btn btn-primary py-3 px-4">
-			            </div>
-		    				</div>
-		    			</form>
-		    		</div>
-    			</div>
         </div>
-    	</div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="staff">
+              <div class="img-wrap d-flex align-items-stretch">
+                <div class="img align-self-stretch" style="background-image: url(images/teacher-1.jpg);"></div>
+              </div>
+              <div class="text pt-3 text-center">
+                <h3>Pandit Rajesh Sharma</h3>
+                <span class="position mb-2">Vedic Astrologer</span>
+                <div class="faded">
+                  <p>25+ years in Kundali analysis, planetary remedies, and marriage compatibility.</p>
+                  <ul class="ftco-social text-center">
+                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="staff">
+              <div class="img-wrap d-flex align-items-stretch">
+                <div class="img align-self-stretch" style="background-image: url(images/teacher-2.jpg);"></div>
+              </div>
+              <div class="text pt-3 text-center">
+                <h3>Dr. Priya Mehta</h3>
+                <span class="position mb-2">Numerologist</span>
+                <div class="faded">
+                  <p>Expert in numerology, name analysis, and lucky numbers for personal and business success.</p>
+                  <ul class="ftco-social text-center">
+                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="staff">
+              <div class="img-wrap d-flex align-items-stretch">
+                <div class="img align-self-stretch" style="background-image: url(images/teacher-3.jpg);"></div>
+              </div>
+              <div class="text pt-3 text-center">
+                <h3>Swami Anand Kumar</h3>
+                <span class="position mb-2">Tarot Reader</span>
+                <div class="faded">
+                  <p>Intuitive tarot reader specializing in relationships and spiritual counseling.</p>
+                  <ul class="ftco-social text-center">
+                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 ftco-animate">
+            <div class="staff">
+              <div class="img-wrap d-flex align-items-stretch">
+                <div class="img align-self-stretch" style="background-image: url(images/teacher-4.jpg);"></div>
+              </div>
+              <div class="text pt-3 text-center">
+                <h3>Acharya Vikram Singh</h3>
+                <span class="position mb-2">Vastu Expert</span>
+                <div class="faded">
+                  <p>Certified Vastu Shastra consultant for residential and commercial space harmonization.</p>
+                  <ul class="ftco-social text-center">
+                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div>
     </section>
 
-	<section class="ftco-section bg-light">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-2">
-          <div class="col-md-8 text-center heading-section ftco-animate">
-            <h2 class="mb-4"><span>Latest</span> Horoscope & Blog</h2>
-            <p>Stay updated with daily horoscope predictions, astrological insights, and spiritual guidance from our expert astrologers.</p>
+    <section class="ftco-section ftco-consult ftco-no-pt ftco-no-pb" style="background-image: url(images/bg_5.jpg);" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-end">
+          <div class="col-md-6 py-5 px-md-5">
+            <div class="py-md-5">
+              <div class="heading-section heading-section-white ftco-animate mb-5">
+                <h2 class="mb-4">Book Your Astrology Consultation</h2>
+                <p>Fill the form to proceed; a WhatsApp chat with Vedic Dhaam will open to continue your consultation.</p>
+              </div>
+              <!-- Updated, accurate fields -->
+              <form action="#" class="appointment-form ftco-animate" id="appointmentForm">
+                <div class="d-md-flex">
+                  <div class="form-group flex-fill">
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                  </div>
+                  <div class="form-group ml-md-4 flex-fill">
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+                  </div>
+                </div>
+
+                <div class="d-md-flex">
+                  <div class="form-group flex-fill">
+                    <div class="form-field">
+                      <div class="select-wrap">
+                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                        <select name="service" class="form-control" required>
+                          <option value="" selected disabled>Select Service</option>
+                          <option value="Birth Chart Reading">Birth Chart Reading</option>
+                          <option value="Marriage Matching">Marriage Matching</option>
+                          <option value="Career Consultation">Career Consultation</option>
+                          <option value="Gemstone Recommendation">Gemstone Recommendation</option>
+                          <option value="Vastu Consultation">Vastu Consultation</option>
+                          <option value="Numerology Reading">Numerology Reading</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group ml-md-4 flex-fill">
+                    <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
+                  </div>
+                </div>
+
+                <div class="d-md-flex">
+                  <div class="form-group flex-fill">
+                    <input type="date" class="form-control" name="birth_date" placeholder="Birth Date">
+                  </div>
+                  <div class="form-group ml-md-4 flex-fill">
+                    <input type="time" class="form-control" name="birth_time" placeholder="Birth Time">
+                  </div>
+                </div>
+
+                <div class="d-md-flex">
+                  <div class="form-group flex-fill">
+                    <input type="text" class="form-control" name="birth_place" placeholder="Birth Place">
+                  </div>
+                  <div class="form-group ml-md-4 flex-fill">
+                    <textarea name="notes" cols="30" rows="2" class="form-control" placeholder="Additional Notes (optional)"></textarea>
+                  </div>
+                </div>
+
+                <div class="d-md-flex">
+                  <div class="form-group">
+                    <input type="submit" value="Book Consultation" class="btn btn-primary py-3 px-4">
+                  </div>
+                </div>
+              </form>
+              <!-- /Updated form -->
+            </div>
           </div>
         </div>
-			<div class="row">
+      </div>
+    </section>
+
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-2">
+          <div class="col-md-8 text-center heading-section ftco-animate">
+            <h2 class="mb-4"><span>Latest</span> Horoscope & Blog</h2>
+            <p>Stay updated with daily horoscope predictions, astrological insights, and spiritual guidance from our experts.</p>
+          </div>
+        </div>
+        <div class="row">
           <div class="col-md-6 col-lg-4 ftco-animate">
             <div class="blog-entry">
               <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('images/image_1.jpg');">
-						<div class="meta-date text-center p-2">
+                <div class="meta-date text-center p-2">
                   <span class="day">28</span>
                   <span class="mos">Oct</span>
                   <span class="yr">2025</span>
@@ -540,13 +624,13 @@
               </a>
               <div class="text bg-white p-4">
                 <h3 class="heading"><a href="#">Mercury Retrograde: What It Means For Your Sign</a></h3>
-                <p>Understanding the impact of Mercury retrograde on communication, technology, and decision-making for each zodiac sign.</p>
+                <p>Understand how Mercury retrograde influences communication, tech, and decisions across all signs.</p>
                 <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Astrologer</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 12</a>
-	                </p>
+                  <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                  <p class="ml-auto mb-0">
+                    <a href="#" class="mr-2">Astrologer</a>
+                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 12</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -554,7 +638,7 @@
           <div class="col-md-6 col-lg-4 ftco-animate">
             <div class="blog-entry">
               <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('images/image_2.jpg');">
-						<div class="meta-date text-center p-2">
+                <div class="meta-date text-center p-2">
                   <span class="day">27</span>
                   <span class="mos">Oct</span>
                   <span class="yr">2025</span>
@@ -562,13 +646,13 @@
               </a>
               <div class="text bg-white p-4">
                 <h3 class="heading"><a href="#">The Power of Gemstones in Vedic Astrology</a></h3>
-                <p>Discover how wearing the right gemstones can strengthen beneficial planets and mitigate negative influences in your birth chart.</p>
+                <p>See how the right gemstones can strengthen beneficial planets and mitigate adverse influences.</p>
                 <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Astrologer</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 8</a>
-	                </p>
+                  <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                  <p class="ml-auto mb-0">
+                    <a href="#" class="mr-2">Astrologer</a>
+                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 8</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -576,7 +660,7 @@
           <div class="col-md-6 col-lg-4 ftco-animate">
             <div class="blog-entry">
               <a href="blog-single.html" class="block-20 d-flex align-items-end" style="background-image: url('images/image_3.jpg');">
-						<div class="meta-date text-center p-2">
+                <div class="meta-date text-center p-2">
                   <span class="day">26</span>
                   <span class="mos">Oct</span>
                   <span class="yr">2025</span>
@@ -584,27 +668,27 @@
               </a>
               <div class="text bg-white p-4">
                 <h3 class="heading"><a href="#">2025 Career Predictions Based on Your Zodiac</a></h3>
-                <p>Explore career opportunities, challenges, and professional growth predictions for all zodiac signs in the upcoming year.</p>
+                <p>Explore professional opportunities, challenges, and growth trends for each zodiac in 2025.</p>
                 <div class="d-flex align-items-center mt-4">
-	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Astrologer</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 15</a>
-	                </p>
+                  <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                  <p class="ml-auto mb-0">
+                    <a href="#" class="mr-2">Astrologer</a>
+                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 15</a>
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
+          </div>          
         </div>
-		</div>
-	</section>
+      </div>
+    </section>
 
-	<section class="ftco-section testimony-section">
+    <section class="ftco-section testimony-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-2">
           <div class="col-md-8 text-center heading-section ftco-animate">
             <h2 class="mb-4">What Our Clients Say</h2>
-            <p>Read testimonials from thousands of satisfied clients who found guidance and clarity through our astrological consultations.</p>
+            <p>Read testimonials from satisfied clients who found clarity through our consultations.</p>
           </div>
         </div>
         <div class="row ftco-animate justify-content-center">
@@ -612,13 +696,10 @@
             <div class="carousel-testimony owl-carousel">
               <div class="item">
                 <div class="testimony-wrap d-flex">
-                  <div class="user-img mr-4" style="background-image: url(images/teacher-1.jpg)">
-                  </div>
+                  <div class="user-img mr-4" style="background-image: url(images/teacher-1.jpg)"></div>
                   <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>The kundali reading was incredibly accurate! Pandit Rajesh helped me understand my career challenges and recommended remedies that truly worked. Highly recommended!</p>
+                    <span class="quote d-flex align-items-center justify-content-center"><i class="icon-quote-left"></i></span>
+                    <p>The kundali reading was incredibly accurate and helpful; highly recommended.</p>
                     <p class="name">Amit Patel</p>
                     <span class="position">Business Owner</span>
                   </div>
@@ -626,13 +707,10 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap d-flex">
-                  <div class="user-img mr-4" style="background-image: url(images/teacher-2.jpg)">
-                  </div>
+                  <div class="user-img mr-4" style="background-image: url(images/teacher-2.jpg)"></div>
                   <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>Dr. Priya's numerology consultation changed my life! After changing my business name as per her guidance, I saw tremendous growth in just 3 months.</p>
+                    <span class="quote d-flex align-items-center justify-content-center"><i class="icon-quote-left"></i></span>
+                    <p>Numerology guidance brought positive changes and growth in just a few months.</p>
                     <p class="name">Sneha Desai</p>
                     <span class="position">Entrepreneur</span>
                   </div>
@@ -640,13 +718,10 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap d-flex">
-                  <div class="user-img mr-4" style="background-image: url(images/teacher-3.jpg)">
-                  </div>
+                  <div class="user-img mr-4" style="background-image: url(images/teacher-3.jpg)"></div>
                   <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>The marriage compatibility report was detailed and insightful. It helped us understand each other better and strengthened our relationship. Thank you!</p>
+                    <span class="quote d-flex align-items-center justify-content-center"><i class="icon-quote-left"></i></span>
+                    <p>Marriage compatibility report was detailed and insightful for our relationship.</p>
                     <p class="name">Rahul & Priya Sharma</p>
                     <span class="position">Newlyweds</span>
                   </div>
@@ -654,13 +729,10 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap d-flex">
-                  <div class="user-img mr-4" style="background-image: url(images/teacher-4.jpg)">
-                  </div>
+                  <div class="user-img mr-4" style="background-image: url(images/teacher-4.jpg)"></div>
                   <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>Acharya Vikram's Vastu consultation brought positive energy to our home. We've experienced better health and prosperity since implementing his suggestions.</p>
+                    <span class="quote d-flex align-items-center justify-content-center"><i class="icon-quote-left"></i></span>
+                    <p>Vastu consultation brought harmony at home and improved wellbeing.</p>
                     <p class="name">Karan Kapoor</p>
                     <span class="position">IT Professional</span>
                   </div>
@@ -668,57 +740,54 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap d-flex">
-                  <div class="user-img mr-4" style="background-image: url(images/teacher-1.jpg)">
-                  </div>
+                  <div class="user-img mr-4" style="background-image: url(images/teacher-1.jpg)"></div>
                   <div class="text ml-2">
-                  	<span class="quote d-flex align-items-center justify-content-center">
-                      <i class="icon-quote-left"></i>
-                    </span>
-                    <p>The gemstone recommendation was spot on! Wearing the suggested blue sapphire has brought tremendous positive changes in my career and finances.</p>
+                    <span class="quote d-flex align-items-center justify-content-center"><i class="icon-quote-left"></i></span>
+                    <p>Gemstone recommendation brought noticeable positive shifts in career and finances.</p>
                     <p class="name">Meera Krishnan</p>
                     <span class="position">Software Engineer</span>
                   </div>
                 </div>
-              </div>
+              </div>              
             </div>
           </div>
         </div>
       </div>
     </section>
 
-	<section class="ftco-gallery">
-    	<div class="container-wrap">
-    		<div class="row no-gutters">
-				<div class="col-md-3 ftco-animate">
-					<a href="images/image_1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/course-1.jpg);">
-						<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-					</a>
-				</div>
-				<div class="col-md-3 ftco-animate">
-					<a href="images/image_2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_2.jpg);">
-						<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-					</a>
-				</div>
-				<div class="col-md-3 ftco-animate">
-					<a href="images/image_3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_3.jpg);">
-						<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-					</a>
-				</div>
-				<div class="col-md-3 ftco-animate">
-					<a href="images/image_4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_4.jpg);">
-						<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-instagram"></span>
-    					</div>
-					</a>
-				</div>
+    <section class="ftco-gallery">
+      <div class="container-wrap">
+        <div class="row no-gutters">
+          <div class="col-md-3 ftco-animate">
+            <a href="images/image_1.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/course-1.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 ftco-animate">
+            <a href="images/image_2.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_2.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 ftco-animate">
+            <a href="images/image_3.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_3.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-3 ftco-animate">
+            <a href="images/image_4.jpg" class="gallery image-popup img d-flex align-items-center" style="background-image: url(images/image_4.jpg);">
+              <div class="icon mb-4 d-flex align-items-center justify-content-center">
+                <span class="icon-instagram"></span>
+              </div>
+            </a>
+          </div>
         </div>
-    	</div>
+      </div>
     </section>
 
     <footer class="ftco-footer ftco-bg-dark ftco-section">
@@ -726,16 +795,17 @@
         <div class="row mb-5">
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Contact Information</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">123 Astro Street, Varanasi, Uttar Pradesh, India</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9876 543 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">consult@celestialinsights.com</span></a></li>
-	              </ul>
-	            </div>
+              <h2 class="ftco-heading-2">Contact Information</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">123 Astro Street, Varanasi, Uttar Pradesh, India</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9992249421</span></a></li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span class="text">consult@celestialinsights.com</span></a></li>
+                </ul>
+              </div>
             </div>
           </div>
+
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5">
               <h2 class="ftco-heading-2">Recent Articles</h2>
@@ -763,6 +833,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5 ml-md-4">
               <h2 class="ftco-heading-2">Quick Links</h2>
@@ -776,9 +847,10 @@
               </ul>
             </div>
           </div>
+
           <div class="col-md-6 col-lg-3">
             <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2">Get Daily Horoscope</h2>
+              <h2 class="ftco-heading-2">Get Daily Horoscope</h2>
               <form action="#" class="subscribe-form">
                 <div class="form-group">
                   <input type="text" class="form-control mb-2 text-center" placeholder="Enter your email">
@@ -787,8 +859,8 @@
               </form>
             </div>
             <div class="ftco-footer-widget mb-5">
-            	<h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
-            	<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+              <h2 class="ftco-heading-2 mb-0">Connect With Us</h2>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
@@ -796,38 +868,235 @@
             </div>
           </div>
         </div>
+
         <div class="row">
           <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Digi1xprt pvt ltd</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+              All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by
+              <a href="https://colorlib.com" target="_blank">Digi1xprt pvt ltd</a>
+            </p>
           </div>
         </div>
       </div>
     </footer>
-    
-  
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">ircle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeeeee"/>ircle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#"#F96D00"/></svg></div>
+    <!-- loader (fixed SVG) -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px" viewBox="0 0 48 48">
+        <circle class="path-bg" cx="24" cy="24" r="20" fill="none" stroke-width="4" stroke="#eeeeee"/>
+        <circle class="path" cx="24" cy="24" r="20" fill="none" stroke-width="4" stroke="#F96D00" stroke-linecap="round"/>
+      </svg>
+    </div>
 
+    <!-- Vendor JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
+    <!-- WhatsApp integration: CORRECTED -->
+    <script>
+      (function(){
+        // FIXED: Added country code 91 prefix
+        const WHATSAPP_NUMBER = '919992249421'; // +91 9992249421
+        const BRAND = 'Vedic Dhaam';
+
+        function isMobile(){
+          return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        
+        function waLink(text){
+          const encoded = encodeURIComponent(text || '');
+          if (isMobile()) {
+            return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encoded;
+          }
+          return 'https://web.whatsapp.com/send?phone=' + WHATSAPP_NUMBER + '&text=' + encoded;
+        }
+
+        function showToast(msg){
+          let toast = document.getElementById('vd-whatsapp-toast');
+          if(!toast){
+            toast = document.createElement('div');
+            toast.id = 'vd-whatsapp-toast';
+            Object.assign(toast.style, {
+              position:'fixed', bottom:'20px', left:'50%', transform:'translateX(-50%)',
+              background:'linear-gradient(135deg, #1b1b1b, #262626)', color:'#fff',
+              padding:'12px 16px', borderRadius:'12px',
+              boxShadow:'0 8px 24px rgba(0,0,0,.35)', zIndex:'9999',
+              fontFamily:'Poppins, Arial, sans-serif', fontSize:'14px',
+              maxWidth:'92%', textAlign:'center', display:'flex',
+              alignItems:'center', gap:'10px', opacity:'0',
+              transition:'opacity .25s ease'
+            });
+            const dot = document.createElement('span');
+            dot.style.cssText = 'width:10px;height:10px;border-radius:50%;background:#25D366;box-shadow:0 0 0 3px rgba(37,211,102,.2);';
+            const txt = document.createElement('span');
+            txt.className = 'txt';
+            toast.appendChild(dot);
+            toast.appendChild(txt);
+            document.body.appendChild(toast);
+          }
+          toast.querySelector('.txt').textContent = msg;
+          requestAnimationFrame(function(){ toast.style.opacity='1'; });
+          clearTimeout(window.__vdToastTimer);
+          window.__vdToastTimer = setTimeout(function(){ toast.style.opacity='0'; }, 4200);
+        }
+
+        function openWhatsAppWith(text){
+          showToast('To connect with Vedic Dhaam, all consultation and Kundali data will go on WhatsApp. Thanks for using Vedic Dhaam — stay connected and use message services for it.');
+          setTimeout(function(){
+            window.open(waLink(text), '_blank');
+          }, 500);
+        }
+
+        function formatSupportMessage(payload){
+          var lines = [
+            '🌟 Vedic Dhaam Support',
+            '',
+            'You are connected to Vedic Dhaam via WhatsApp.',
+            'New consultation enquiry received via website.',
+            '────────────────────',
+            '👤 Name: ' + (payload.name || 'N/A'),
+            '🧿 Service: ' + (payload.service || 'N/A'),
+            '📱 Phone: ' + (payload.phone || 'N/A'),
+            '📆 Birth Date: ' + (payload.birth_date || 'N/A'),
+            '⏰ Birth Time: ' + (payload.birth_time || 'N/A'),
+            '📍 Birth Place: ' + (payload.birth_place || 'N/A'),
+            '📝 Notes: ' + (payload.notes || 'N/A'),
+            '🌐 Source: ' + (payload.source || 'Website'),
+            '────────────────────',
+            'Thank you for using Vedic Dhaam. Please stay connected and use WhatsApp messages for all consultation and Kundali services.'
+          ];
+          return lines.join('\n');
+        }
+
+        function collectAppointmentPayload(form){
+          var v = function(sel){ 
+            var el = form.querySelector(sel);
+            return el ? (el.value || '').trim() : '';
+          };
+          var first = v('input[name="first_name"]');
+          var last = v('input[name="last_name"]');
+          var name = [first,last].filter(Boolean).join(' ') || 'N/A';
+          return {
+            name: name,
+            service: v('select[name="service"]'),
+            phone: v('input[name="phone"]'),
+            birth_date: v('input[name="birth_date"]'),
+            birth_time: v('input[name="birth_time"]'),
+            birth_place: v('input[name="birth_place"]'),
+            notes: v('textarea[name="notes"]'),
+            source: 'Appointment form'
+          };
+        }
+
+        function quickMessage(title){
+          var lines = [
+            '🌟 Vedic Dhaam Support',
+            '',
+            'You are connected to Vedic Dhaam via WhatsApp.',
+            '────────────────────',
+            '📣 Request: ' + title,
+            '────────────────────',
+            'Thank you for using Vedic Dhaam. Please stay connected and use WhatsApp messages for all consultation and Kundali services.'
+          ];
+          return lines.join('\n');
+        }
+
+        function attachHandlers(){
+          var heroKundali = document.getElementById('btnGetKundali');
+          if(heroKundali){
+            heroKundali.addEventListener('click', function(e){
+              e.preventDefault();
+              openWhatsAppWith(quickMessage('Kundali request from website hero button'));
+            });
+          }
+
+          var topConsult = document.getElementById('btnBookConsultationTop');
+          if(topConsult){
+            topConsult.addEventListener('click', function(e){
+              e.preventDefault();
+              openWhatsAppWith(quickMessage('Consultation request from heart'));
+            });
+          }
+
+          var navContact = document.getElementById('navContactLink');
+          if(navContact){
+            navContact.addEventListener('click', function(e){
+              e.preventDefault();
+              openWhatsAppWith(quickMessage('Contact request from navigation'));
+            });
+          }
+
+          var searchForm = document.querySelector('form.searchform');
+          if(searchForm){
+            searchForm.addEventListener('submit', function(e){
+              e.preventDefault();
+              var input = searchForm.querySelector('input[type="text"]');
+              var q = input ? (input.value || '').trim() : '';
+              openWhatsAppWith(quickMessage('Website search/query: "' + (q || 'N/A') + '"'));
+            });
+          }
+
+          var apptForm = document.getElementById('appointmentForm');
+          if(apptForm){
+            apptForm.addEventListener('submit', function(e){
+              e.preventDefault();
+              var payload = collectAppointmentPayload(apptForm);
+              openWhatsAppWith(formatSupportMessage(payload));
+            });
+          }
+
+          var subscribeForm = document.querySelector('form.subscribe-form');
+          if(subscribeForm){
+            subscribeForm.addEventListener('submit', function(e){
+              e.preventDefault();
+              var input = subscribeForm.querySelector('input[type="text"]');
+              var email = input ? (input.value || '').trim() : '';
+              openWhatsAppWith(quickMessage('Subscription request | Email: ' + (email || 'N/A')));
+            });
+          }
+
+          document.querySelectorAll('a').forEach(function(a){
+            var txt = (a.textContent || '').trim();
+            if(/\+?91\s?\d{3,}/.test(txt) || /@/.test(txt)){
+              a.addEventListener('click', function(e){
+                e.preventDefault();
+                openWhatsAppWith(quickMessage('Contact via: ' + txt));
+              });
+            }
+          });
+
+          document.querySelectorAll('a.btn.btn-primary').forEach(function(a){
+            if(a.id === 'btnGetKundali' || a.id === 'btnBookConsultationTop') return;
+            a.addEventListener('click', function(e){
+              e.preventDefault();
+              var closest = a.closest('.text');
+              var heading = closest ? closest.querySelector('h3, h2, .heading') : null;
+              var context = heading ? heading.innerText : (a.innerText || 'General enquiry');
+              openWhatsAppWith(quickMessage('Button: ' + context.trim()));
+            });
+          });
+        }
+
+        if(document.readyState === 'loading'){
+          document.addEventListener('DOMContentLoaded', attachHandlers);
+        } else {
+          attachHandlers();
+        }
+      })();
+    </script>
   </body>
 </html>
